@@ -1,6 +1,7 @@
 # Gender-and-Age-Detection-based-Customer-Tracking-Classification
 This algorithm tracks a person entering from a particular direction while his/her gender &amp; age group are predicted &amp; stored with the respective time of detection.
 
+Download weights file: [Download Link](https://www.dropbox.com/sh/gzo6mz3ri7gwgmq/AADgFxJpPCTPUOlgDLdIe66ra?dl=0)
 
 Identifying the data of potential customers passing by a specific spot in a market can help an investor in choosing the right business to be started on that spot. Mainly two main parameters that are very important in this regard are gender ratio & age parity of the people that pass by a specific spot. By keeping that in mind I made an algorithm in which I trained models for:
 •	Face detection
