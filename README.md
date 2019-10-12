@@ -45,7 +45,7 @@ We used the floating point 16 version file as it was more powerful in terms of a
 The DNN based detector overcomes all the drawbacks of Haar cascade-based detector, without compromising on any benefit provided by Haar. We could not see any major drawback for this method except that it is slower than the Dlib HoG based Face Detector.
 I tried to evaluate the 4 models using the FDDB dataset using the script used for evaluating the OpenCV-DNN model. However, I found surprising results. Dlib had worse numbers than Haar, although visually dlib outputs look much better. Given below are the Precision scores for the 4 methods.
 
-![Redme_Images/score_vs_metrics.jpg](Figure 1: Score vs Metrics)
+![Figure 1: Score vs Metrics](Redme_Images/score_vs_metrics.jpg)
 
 
 Where,
@@ -71,18 +71,18 @@ Hardware used:
 
 We run each method 10000 times on the given image and take 10 such iterations and average the time taken. Given below are the results:
 
-![Redme_Images/speed_comparison.jpg](Figure 2: Speed comparison)
+![Figure 2: Speed comparison](Redme_Images/speed_comparison.jpg)
 
 
 In our application the basic issue was off the non-frontal faces as they can be described as looking towards right, left, up, down. Again, to be fair with dlib, we make sure the face size is more than 80×80. Given below are some examples.
 
-![Redme_Images/Comparison_of_different_models.jpg](Figure 3 Comparison of different models)
+![Figure 3 Comparison of different models](Redme_Images/Comparison_of_different_models.jpg)
 
 
 ### Age & Gender model training:
 The network architecture that we used throughout our experiments for both age and gender classification is illustrated in Figure 4.
 
-![Redme_Images/network_structure.jpg](Figure 4 Network Structure)
+![Figure 4 Network Structure](Redme_Images/network_structure.jpg)
 
 The network comprises of only three convolutional layers and two fully connected layers with a small number of neurons. Our choice of a smaller network design is motivated both from our desire to reduce the risk of overfitting as well as nature of the problems we are attempting to solve: age classification on the Adience set requires distinguishing between eight classes; gender only two.
 
@@ -126,7 +126,7 @@ This algorithm is a multi-model DNN program that is optimized for low computatio
     •	Each person is then assigned an ID and tracked over time, even when they are out of the frame for not so long (5 seconds), whenever they come back in the frame, their ID will remain the same.
     •	A picture of the person is then saved with respect to their ID number & the prediction is saved in the Excel Database.
 
-![Redme_Images/steps.jpg](Figure 5 Steps)
+![Figure 5 Steps](Redme_Images/steps.jpg)
 
 ## Requirements:
 There is a requirement.txt file in the project files that can be used to install required libraries. The important libraries used in this algorithm are as follows:
@@ -147,14 +147,14 @@ OpenCV must be installed manually while rest of the files can easily be download
 
 To implement the program user has to enter python Detect.py & it will run the program, to turn off the video stream you have to comment out line # 161.
 
-![Redme_Images/test.jpg](Figure 6 Test)
+![Figure 6 Test](Redme_Images/test.jpg)
 
 
 ## Explanation:
 
 The code initially loads all the required models. It then initializes the video-stream & that stream is subjected to our first model that is face detection. After the face is detected the first step involves assigning an id number to this detected contour. After that the program waits for 0.5 seconds to fetch a face from a frame so that it is not at the border or not occluded. This face image is then converted to blob object of 277×277 which is then sent to the gender prediction & age prediction model serially. The results are then written in the excel file with the corresponding ID, date & time. The person is tracked in the frame until he leaves the frame & the other person enters. The output file is in this manner;
 
-![Redme_Images/save_output.jpg](Figure 7 Excel Output)
+![Figure 7 Excel Output](Redme_Images/save_output.jpg)
 
 Whereas the respective images are saved with variable sizes depending on the distance of person from camera.
 
