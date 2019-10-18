@@ -127,7 +127,7 @@ This algorithm is a multi-model DNN program that is optimized for low computatio
     •	Each person is then assigned an ID and tracked over time, even when they are out of the frame for not so long (5 seconds), whenever they come back in the frame, their ID will remain the same.
     •	A picture of the person is then saved with respect to their ID number & the prediction is saved in the Excel Database.
 
-![Figure 5 Steps](Redme_Images/steps.jpg)
+![Figure 5 Steps](Redme_Images/steps.jpg =250x250)
 
 ## Requirements:
 There is a requirement.txt file in the project files that can be used to install required libraries. The important libraries used in this algorithm are as follows:
